@@ -1,5 +1,5 @@
 import flask
-from flask import request, jsonify
+from flask import request, jsonify, Response
 import sqlite3
 import pandas as pd
 
@@ -20,13 +20,13 @@ def home():
 
 
 @app.route('/api/v1/resources/suppliers/all', methods=['GET'])
-def test_all():
+def list_suppliers():
 	conn = sqlite3.connect("data_input/Northwind_small.sqlite")
-	all_suppliers = pd.read_sql_query("SELECT * " \
-							"FROM Supplier;", \
-							conn, \
-							index_col="Id")
-	return (all_suppliers.to_json())
+	suppliers = pd.read_sql_query("SELECT * FROM Supplier;", conn)
+	json_suppliers = suppliers.to_json()
+
+	resp = Response(response=json_suppliers,status=200,mimetype="application/json")
+	return(resp)
 
 @app.route('/api/v1/resources/products/all', methods=['GET'])
 def products_all():
