@@ -47,8 +47,9 @@ Returns full data of orders filter by :
 
 ```
 
-If you want to try it, you can access (copy-paste it) : 
+If you want to try it, you can access (click links at below) : 
 - https://aguscuk-capstone-api.herokuapp.com
+- https://aguscuk-capstone-api.herokuapp.com/docs
 - https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/products/all
 - https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/suppliers/all
 - https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/customers/all
