@@ -10,6 +10,41 @@ def home():
 	return '''<h1>Capstone API</h1>
 	<p>aguscuk capstone project api</p>'''
 
+@app.route('/docs', methods=['GET'])
+def docs():
+	return '''<h1>Capstone API Documentation</h1>
+	<h2>Dependencies</h2>\
+	<p>- Pandas    (pip install pandas)</p>\
+	<p>- flask    (pip install flask)</p>\
+	<p>- gunicorn    (pip install gunicorn)</p>\
+	<p>- requests    (pip install requests)</p>\
+	<p>- jsonify    (pip install jsonify)</p>\
+	<br>
+	<h3>HOW TO</h3>
+	<p><strong>1. / , method = GET</strong></p>
+	<p>Base Endpoint, returning welcoming string value.</p>
+	Here's : <a href="https://aguscuk-capstone-api.herokuapp.com">https://aguscuk-capstone-api.herokuapp.com</a>
+	<br><br>
+	<p><strong>2. /api/v1/resources/<data_name>/all , method = GET</strong></p>
+	<p>Return full data <data_name> in JSON format. Currently available data are:</p>
+    <p>- products : <a href="https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/products/all">https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/products/all</a> </p>
+    <p>- suppliers : <a href="https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/suppliers/all">https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/suppliers/all</a> </p>
+	<p>- customers : <a href="https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/customers/all">https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/customers/all</a> </p>
+	<br>
+	<p><strong>3. /api/v1/resources/top5_countries/dow , method = GET</strong></P>
+	<p>Return top5 countries that have total omzet from orders = UnitPrice * Quantity * Discount</p>
+	<p> For EDA you can read this : <a href="https://github.com/aguscuk/capstone-api/blob/master/capstone-api-markdown.ipynb">https://github.com/aguscuk/capstone-api/blob/master/capstone-api-markdown.ipynb</a>
+	<p> TOP 5 Countries Omzet Total from Orders : <a href="https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/top5_countries/dow">https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/top5_countries/dow</a></p>
+	<p><strong>4. /api/v1/resources/filter/<values></strong></p>
+	<p>Returns full data of orders filter by :</p>
+	<p>- country=<values>, exp: <i>country=France</i></p>
+	<p>- orderdate_start=<values>,  exp: <i>orderdate_start=2012-01-01</i></p>
+	<p>- orderdate_end=<values>, exp: <i>orderdate_end=2012-12-31</i></p>
+	<p>Filter implementation: <a href="https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/filter?country=France&orderdate_start=2012-01-01&orderdate_end=2012-12-31">https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/filter?country=France&orderdate_start=2012-01-01&orderdate_end=2012-12-31</a></p>
+	'''
+	
+
+
 def dict_factory(cursor, row):
 	d = {}
 	for idx, col in enumerate(cursor.description):

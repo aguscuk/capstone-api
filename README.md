@@ -41,7 +41,7 @@ Return top5 countries that have total omzet from orders = UnitPrice * Quantity *
 
 4. /api/v1/resources/filter/<values>
 Returns full data of orders filter by :
-	- country=<values>, exp: country=Germany
+	- country=<values>, exp: country=France
 	- orderdate_start=<values>,  exp: orderdate_start=2012-01-01
 	- orderdate_end=<values>, exp: orderdate_end=2012-12-31
 
@@ -52,5 +52,6 @@ If you want to try it, you can access (copy-paste it) :
 - https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/products/all
 - https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/suppliers/all
 - https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/customers/all
+- https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/top5_countries/dow
 - https://aguscuk-capstone-api.herokuapp.com/api/v1/resources/filter?country=France&orderdate_start=2012-01-01&orderdate_end=2012-12-31
 - and so on, just follow the endpoint's pattern
